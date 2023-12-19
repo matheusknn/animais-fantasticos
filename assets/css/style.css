@@ -35,7 +35,7 @@ body {
 
 .menu li a {
   display: block;
-  padding: 10px;
+  padding: 15px 10px;
   margin-right: 10px;
   color: #222;
   text-decoration: none;
@@ -110,12 +110,32 @@ body {
   background: #faf6ed;
 }
 
+.animais-lista li {
+  cursor: pointer;
+}
+
 .animais-descricao {
   grid-column: 3;
 }
 
 .animais-descricao section {
   margin-bottom: 3rem;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.animais-descricao section::-webkit-scrollbar {
+  width: 12px;
+}
+
+.animais-descricao section::-webkit-scrollbar-thumb {
+  background: #FB5;
+  border-left: 4px solid #faf6ed;
+  border-right: 4px solid #faf6ed;
+}
+
+.animais-descricao section::-webkit-scrollbar-track {
+  background: #faf6ed;
 }
 
 .faq-lista {
@@ -204,5 +224,25 @@ body {
   }
   .copy {
     margin-bottom: 0px;
+  }
+}
+
+.js .js-tabcontent section {
+  display: none;
+}
+
+.js .js-tabcontent section.active {
+  display: block !important;
+  animation: show .5s forwards; /*chamando a animação "show" para esse elemento. forwards e para ficar no estado final depois de ocorrer a animação*/
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);/*o transforme trabslate3d recebe 3 argumento, eixo horizontal, */
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
   }
 }
